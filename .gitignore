@@ -15,3 +15,4 @@ _pptx.txt
 *.pptx
 *.pdf
 WhatsApp*
+.env*
