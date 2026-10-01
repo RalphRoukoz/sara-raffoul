@@ -5,6 +5,7 @@ export type Shot = {
   width: number;
   height: number;
   span?: "full" | "half";
+  drawing?: boolean;
 };
 
 export type Swatch = {
@@ -162,9 +163,9 @@ export const projects: Project[] = [
     slug: "living-room",
     index: "02",
     title: "Living room",
-    kind: "Interior study · three cameras",
+    kind: "Interior study · cameras, plan, elevation",
     summary:
-      "One room, read three ways: the long view, the chair, and the plan from above.",
+      "One room, read as three cameras, then as a plan and an elevation.",
     statement:
       "The long wall is a run of pale panels over a timber band, broken by a dark fluted bay. A low sofa faces a round table on a brass base. Dusty-rose velvet — a chair and a matching ottoman — is the only strong colour. Oak stays on the floor. The second camera stays with the chair. The third looks down, where the rug, the timber, and a side table meet.",
     cover: "/images/living/cam1.jpg",
@@ -174,7 +175,7 @@ export const projects: Project[] = [
     coverHeight: 1800,
     facts: [
       { label: "Cameras", value: "Wide, detail, overhead" },
-      { label: "Floor", value: "Oak" },
+      { label: "Drawings", value: "Plan and elevation" },
       { label: "Accent", value: "Dusty-rose velvet" },
       { label: "Light", value: "Globe pendant, linear slots" },
     ],
@@ -210,15 +211,33 @@ export const projects: Project[] = [
         height: 1117,
         span: "half",
       },
+      {
+        src: "/images/living/plan.jpg",
+        alt: "Furniture plan of the living room with sofa, round table, armchair, ottoman, rug, and window",
+        caption: "Plan",
+        width: 1800,
+        height: 1343,
+        span: "half",
+        drawing: true,
+      },
+      {
+        src: "/images/living/elevation.jpg",
+        alt: "Interior elevation of the living room looking toward the sofa and the paneled feature wall",
+        caption: "Elevation",
+        width: 2000,
+        height: 1130,
+        span: "half",
+        drawing: true,
+      },
     ],
   },
   {
     slug: "bedroom",
     index: "03",
     title: "Bedroom",
-    kind: "Interior study",
+    kind: "Interior study · view, plan, elevation",
     summary:
-      "A quiet room in oak, linen, and olive, with daylight along one wall and an open closet along the other.",
+      "A quiet room in oak, linen, and olive, drawn as a view, a plan, and an elevation.",
     statement:
       "The bed sits on a textured rug between two low tables. Behind it, a timber headboard wall is cut by an L-shaped light. An open closet runs the right side, lined with folded linen. The window is full height, with a heavy curtain, so the room takes the day without losing the calm of the palette.",
     cover: "/images/bedroom.jpg",
@@ -227,7 +246,7 @@ export const projects: Project[] = [
     coverWidth: 1920,
     coverHeight: 1080,
     facts: [
-      { label: "Wall", value: "Oak and plaster" },
+      { label: "Drawings", value: "Plan and elevation" },
       { label: "Bed", value: "Linen, olive cushions" },
       { label: "Storage", value: "Open closet" },
       { label: "Light", value: "Window and linear sconce" },
@@ -247,6 +266,24 @@ export const projects: Project[] = [
         width: 1920,
         height: 1080,
         span: "full",
+      },
+      {
+        src: "/images/bedroom-plan.jpg",
+        alt: "Furniture plan of the bedroom with bed, nightstands, bench, rug, window, and closet",
+        caption: "Plan",
+        width: 1800,
+        height: 1343,
+        span: "half",
+        drawing: true,
+      },
+      {
+        src: "/images/bedroom-elevation.jpg",
+        alt: "Interior elevation of the bedroom looking toward the headboard wall, window, and closet",
+        caption: "Elevation",
+        width: 2000,
+        height: 1130,
+        span: "half",
+        drawing: true,
       },
     ],
   },

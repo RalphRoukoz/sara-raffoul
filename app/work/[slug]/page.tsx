@@ -33,7 +33,8 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
 
   const index = projects.findIndex((item) => item.slug === project.slug);
   const next = projects[(index + 1) % projects.length];
-  const plates = project.shots.filter((shot) => shot.src !== project.cover);
+  const plates = project.shots.filter((shot) => shot.src !== project.cover && !shot.drawing);
+  const drawings = project.shots.filter((shot) => shot.drawing);
 
   return (
     <main id="content">
@@ -109,6 +110,16 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
           <div className="mt-16">
             <h2 className="kicker mb-6 text-muted">Plates</h2>
             <Gallery shots={plates} />
+          </div>
+        ) : null}
+
+        {drawings.length > 0 ? (
+          <div className="mt-16">
+            <h2 className="kicker mb-6 text-muted">Plan and elevation</h2>
+            <p className="mb-6 max-w-2xl text-sm text-muted">
+              Reconstructed from the render: the room as a furnished plan, and as an interior elevation of the wall the camera faces.
+            </p>
+            <Gallery shots={drawings} />
           </div>
         ) : null}
 
